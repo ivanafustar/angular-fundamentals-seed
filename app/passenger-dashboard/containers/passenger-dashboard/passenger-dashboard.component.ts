@@ -69,6 +69,5 @@ export class PassengerDashboardComponent implements OnInit {
       }
       return p;
     })
-    console.log(this.passengers)
   }
 }
