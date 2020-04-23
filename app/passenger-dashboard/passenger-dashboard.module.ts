@@ -7,6 +7,7 @@ import { PassengerDashboardComponent } from './containers/passenger-dashboard/pa
 //components
 import { PassengerCountComponent } from './components/passenger-count/passenger-count.component';
 import { PassengerDetailComponent } from './components/passenger-detail/passenger-detail.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PassengerDetailComponent } from './components/passenger-detail/passenge
     PassengerDashboardComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class PassengerDashboardModule {

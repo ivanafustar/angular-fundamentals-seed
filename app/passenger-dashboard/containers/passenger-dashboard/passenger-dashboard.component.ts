@@ -6,21 +6,20 @@ import { Passenger } from '../../models/passenger.interface';
   selector: 'passenger-dashboard',
   styleUrls: ['passenger-dashboard.component.scss'],
   template: `
-    <passenger-count
-      [items]="passengers"
-    >
-    </passenger-count>
-    <passenger-detail
-      *ngFor="let passenger of passengers"
-      [detail]="passenger"
-    >
-    </passenger-detail>
     <div>
-      <ul>
-        <li *ngFor="let passenger of passengers; let i = index;">
+      <passenger-count
+        [items]="passengers"
+      >
+      </passenger-count>
 
-        </li>
-      </ul>
+      <passenger-detail
+        *ngFor="let passenger of passengers"
+        [detail]="passenger"
+        (edit)="handleEdit($event)"
+        (remove)="handleRemove($event)"
+      >
+      </passenger-detail>
+
     </div>
   `
 })
@@ -33,13 +32,13 @@ export class PassengerDashboardComponent implements OnInit {
   ngOnInit() {
     this.passengers = [{
       id: 1,
-      fullName: 'N. N.',
+      fullName: 'Nick Jackelson',
       checkedIn: true,
       checkInDate: 1490742000000,
       children: [{ age: 6, name: 'Darren' }]
     }, {
       id: 2,
-      fullName: 'I. N.',
+      fullName: 'Jack Nickelson',
       checkedIn: false,
     }, {
       id: 3,
@@ -55,5 +54,21 @@ export class PassengerDashboardComponent implements OnInit {
       checkedIn: false,
     }
     ]
+  }
+
+  handleRemove = (ev: Passenger) => {
+    this.passengers = this.passengers.filter((p: Passenger) => {
+      return p.id !== ev.id;
+    })
+  }
+
+  handleEdit = (ev: Passenger) => {
+    this.passengers = this.passengers.map((p: Passenger) => {
+      if (p.id === ev.id) {
+        p = Object.assign(p, ev)
+      }
+      return p;
+    })
+    console.log(this.passengers)
   }
 }
