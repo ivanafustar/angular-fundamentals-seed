@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { PassengerDashboardService } from '../../passenger-dashboard.service';
+
 import { Passenger } from '../../models/passenger.interface';
 
 @Component({
@@ -26,34 +28,11 @@ import { Passenger } from '../../models/passenger.interface';
 export class PassengerDashboardComponent implements OnInit {
   passengers: Passenger[];
 
-  constructor() {
-  }
+  constructor(private passengerService: PassengerDashboardService) {
+  } //meaning: this.passengerService = PassengerDashboardService;
 
   ngOnInit() {
-    this.passengers = [{
-      id: 1,
-      fullName: 'Nick Jackelson',
-      checkedIn: true,
-      checkInDate: 1490742000000,
-      children: [{ age: 6, name: 'Darren' }]
-    }, {
-      id: 2,
-      fullName: 'Jack Nickelson',
-      checkedIn: false,
-    }, {
-      id: 3,
-      fullName: 'N. I.',
-      checkedIn: true,
-    }, {
-      id: 4,
-      fullName: 'N. N.',
-      checkedIn: false,
-    }, {
-      id: 5,
-      fullName: 'I. I.',
-      checkedIn: false,
-    }
-    ]
+    this.passengers = this.passengerService.getPassengers(); //synchronous call
   }
 
   handleRemove = (ev: Passenger) => {
