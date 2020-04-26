@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-
 @Component({
   selector: 'app-root',
   styleUrls: ['app.component.scss'],
@@ -13,10 +12,18 @@ import { Component } from '@angular/core';
       <div *ngIf="refInput.value.length">Searching for ... {{something}}</div>
       -->
       <!--      <passenger-dashboard></passenger-dashboard>-->
-      <passenger-viewer></passenger-viewer>
+      <a routerLink="/">
+        Home
+      </a>
+      <a routerLink="/oops">
+        Oops
+      </a>
+
+      <router-outlet></router-outlet>
     </div>
   `
 })
+////router outlet is a placeholer where the components will be injected
 
 export class AppComponent {
   // something: string = '';
@@ -29,7 +36,6 @@ export class AppComponent {
   // handleClick = (value) => {
   //   console.log(value)
   // }
-
 
 }
 
