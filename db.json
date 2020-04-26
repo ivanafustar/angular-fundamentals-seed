@@ -1,1 +1,43 @@
-{}
+{
+  "passengers": [
+    {
+      "id": 1,
+      "fullName": "Nick Jackelson",
+      "checkedIn": true,
+      "checkInDate": 1490742000000,
+      "children": [
+        {
+          "age": 6,
+          "name": "Darren"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "fullName": "Jack Nickelson",
+      "checkedIn": false,
+      "checkInDate": 1410742000000,
+      "children": [
+        {
+          "age": 6,
+          "name": "Jason"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "fullName": "N. I.",
+      "checkedIn": true
+    },
+    {
+      "id": 4,
+      "fullName": "N. N.",
+      "checkedIn": false
+    },
+    {
+      "id": 5,
+      "fullName": "I. I.",
+      "checkedIn": false
+    }
+  ]
+}
