@@ -12,12 +12,25 @@ import { Component } from '@angular/core';
       <div *ngIf="refInput.value.length">Searching for ... {{something}}</div>
       -->
       <!--      <passenger-dashboard></passenger-dashboard>-->
-      <a routerLink="/">
-        Home
-      </a>
-      <a routerLink="/oops">
-        Oops
-      </a>
+      <nav class="nav">
+        <a
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}"
+        >
+          Home
+        </a>
+        <a
+          routerLink="/oops"
+          routerLinkActive="active"
+        >
+          Oops
+        </a>
+      </nav>
+
+      <!-- directive routerLinkActive will add a class active-->
+      <!-- directive routerLinkActiveOptions is to make sure that the class only gets added on the exact / route -->
+
 
       <router-outlet></router-outlet>
     </div>

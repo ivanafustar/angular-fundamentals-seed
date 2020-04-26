@@ -4,3 +4,21 @@
   background: rebeccapurple;
 }
 
+.nav {
+  margin: 20px;
+  padding: 10px;
+  border-bottom: 1px solid violet;
+
+  a {
+    background-color: #b598e4;
+    color: #eeeeee;
+    padding: 4px 10px;
+    margin: 2px;
+    border-radius: 3px;
+
+    &.active {
+      color: violet;
+      background: #545e6f;
+    }
+  }
+}
