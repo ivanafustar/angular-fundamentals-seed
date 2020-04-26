@@ -2,7 +2,7 @@
   "passengers": [
     {
       "id": 1,
-      "fullName": "Nick Jackelson",
+      "fullName": "Nick Jackelsonlll",
       "checkedIn": true,
       "checkInDate": 1490742000000,
       "children": [
@@ -30,14 +30,37 @@
       "checkedIn": true
     },
     {
-      "id": 4,
-      "fullName": "N. N.",
-      "checkedIn": false
-    },
-    {
       "id": 5,
       "fullName": "I. I.",
       "checkedIn": false
+    },
+    {
+      "id": 1,
+      "fullName": "Somebody that I used to know",
+      "checkedIn": true,
+      "checkInDate": 1490749000000,
+      "children": [
+        {
+          "age": 9,
+          "name": "Babies"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "fullName": "Name Surname",
+      "checkedIn": true,
+      "checkInDate": 1490049000000,
+      "children": [
+        {
+          "age": 9,
+          "name": "Child"
+        },
+        {
+          "age": 3,
+          "name": "Kid"
+        }
+      ]
     }
   ]
 }
