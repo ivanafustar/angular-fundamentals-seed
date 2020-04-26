@@ -6,10 +6,10 @@
     Passenger name:
     <input
       #fullName="ngModel"
+      [ngModel]="detail?.fullName"
       name="fullName"
       required
       type="text"
-      [ngModel]="detail?.fullName"
     >
     <!-- dirty state shows if the user has interacted with the form or not -->
     <!-- touched state shows if the user has touched the input and then left it empty -->
@@ -19,9 +19,9 @@
 
     ID:
     <input
+      #id="ngModel"
       [ngModel]="detail?.id"
       name="id"
-      #id="ngModel"
       required
       type="text"
     >
@@ -75,9 +75,16 @@
           </option>
         </select>
       </div>
-
     </div>
 
   </div>
+
+  <button
+    [disabled]="form.invalid"
+    type="submit"
+  >
+    Submit
+  </button>
+
   {{ form.value | json }}
 </form>
