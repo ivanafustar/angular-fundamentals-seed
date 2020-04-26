@@ -3,8 +3,8 @@ export interface Passenger {
   fullName: string,
   checkedIn: boolean,
   checkInDate?: number | null,
-  children?: Child[] | null
-
+  children?: Child[] | null,
+  baggage: string
 }
 
 export interface Child {

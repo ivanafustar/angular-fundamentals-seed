@@ -1,0 +1,55 @@
+<!--Template driven forms: The source of truth is template, meaning that each form element is linked to a directive that manages the form internally-->
+<!--All the properties that we create need to be bound to some input and registered inside the form to be picked up by angular -->
+<form #form="ngForm" novalidate>
+  {{ detail | json }} <!-- This is the original data value (the reference model that has been passed down to form)  -->
+  <div style="display: flex; flex-direction: column; width: 50%; justify-content: center;">
+    Passenger name:
+    <input
+      [ngModel]="detail?.fullName"
+      name="fullName"
+      type="text"
+    >
+    ID:
+    <input
+      [ngModel]="detail?.id"
+      name="id"
+      type="text"
+    >
+
+    <div>
+      <!-- These radio buttons have the same name they can talk to each other and be part of the same group -->
+      <label>
+        <input
+          (ngModelChange)="toggleCheckIn($event)"
+          [ngModel]="detail?.checkedIn"
+          [value]="true"
+          name="checkedIn"
+          type="radio"
+        >
+        Yes
+      </label>
+      <label>
+        <input
+          (ngModelChange)="toggleCheckIn($event)"
+          [ngModel]="detail?.checkedIn"
+          [value]="false"
+          name="checkedIn"
+          type="radio"
+        >
+        No
+      </label>
+    </div>
+
+    <div *ngIf="form.value.checkedIn">
+      Checked in date:
+      <input
+        [ngModel]="detail?.checkInDate"
+        name="checkInDate"
+        type="number"
+      >
+
+    </div>
+
+  </div>
+  {{ form.value | json }}
+</form>

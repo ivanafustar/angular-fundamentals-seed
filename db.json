@@ -10,7 +10,8 @@
           "age": 6,
           "name": "Darren"
         }
-      ]
+      ],
+      "baggage": ""
     },
     {
       "id": 2,
@@ -22,20 +23,23 @@
           "age": 6,
           "name": "Jason"
         }
-      ]
+      ],
+      "baggage": ""
     },
     {
       "id": 3,
       "fullName": "N. I.",
-      "checkedIn": true
+      "checkedIn": true,
+      "baggage": ""
+    },
+    {
+      "id": 4,
+      "fullName": "I. I.",
+      "checkedIn": false,
+      "baggage": ""
     },
     {
       "id": 5,
-      "fullName": "I. I.",
-      "checkedIn": false
-    },
-    {
-      "id": 1,
       "fullName": "Somebody that I used to know",
       "checkedIn": true,
       "checkInDate": 1490749000000,
@@ -44,10 +48,11 @@
           "age": 9,
           "name": "Babies"
         }
-      ]
+      ],
+      "baggage": ""
     },
     {
-      "id": 1,
+      "id": 6,
       "fullName": "Name Surname",
       "checkedIn": true,
       "checkInDate": 1490049000000,
@@ -60,7 +65,8 @@
           "age": 3,
           "name": "Kid"
         }
-      ]
+      ],
+      "baggage": ""
     }
   ]
 }

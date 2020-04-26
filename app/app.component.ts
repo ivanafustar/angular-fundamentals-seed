@@ -12,7 +12,8 @@ import { Component } from '@angular/core';
       <input #refInput type="text" (input)="handleChange(refInput.value)">
       <div *ngIf="refInput.value.length">Searching for ... {{something}}</div>
       -->
-      <passenger-dashboard></passenger-dashboard>
+      <!--      <passenger-dashboard></passenger-dashboard>-->
+      <passenger-viewer></passenger-viewer>
     </div>
   `
 })
