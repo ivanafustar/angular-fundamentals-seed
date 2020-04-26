@@ -5,16 +5,30 @@
   <div style="display: flex; flex-direction: column; width: 50%; justify-content: center;">
     Passenger name:
     <input
-      [ngModel]="detail?.fullName"
+      #fullName="ngModel"
       name="fullName"
+      required
       type="text"
+      [ngModel]="detail?.fullName"
     >
+    <!-- dirty state shows if the user has interacted with the form or not -->
+    <!-- touched state shows if the user has touched the input and then left it empty -->
+    <div *ngIf="fullName.errors?.required && fullName.dirty" class="error">
+      Passenger name is required
+    </div>
+
     ID:
     <input
       [ngModel]="detail?.id"
       name="id"
+      #id="ngModel"
+      required
       type="text"
     >
+
+    <div *ngIf="id.errors?.required && id.dirty" class="error">
+      ID is required
+    </div>
 
     <div>
       <!-- These radio buttons have the same name they can talk to each other and be part of the same group -->
