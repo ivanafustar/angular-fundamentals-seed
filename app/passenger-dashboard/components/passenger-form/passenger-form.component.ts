@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { Passenger } from '../../models/passenger.interface';
 import { Baggage } from '../../models/baggage.interface';
@@ -11,6 +11,9 @@ import { Baggage } from '../../models/baggage.interface';
 export class PassengerFormComponent {
   @Input()
   detail: Passenger;
+
+  @Output()
+  update: EventEmitter<Passenger> = new EventEmitter<Passenger>(); //we emit Passenger object, and we pass the type to the instance of the event Emitter
 
   baggage: Baggage[] = [{
     key: 'none',
@@ -26,6 +29,11 @@ export class PassengerFormComponent {
     value: 'hand and hold baggage'
   }]
 
+  handleSubmit = (value: Passenger, isValid: boolean) => {
+    if (isValid) {
+      this.update.emit(value)
+    }
+  }
 
   toggleCheckIn = (checkedIn: boolean) => {
     if (checkedIn) {
