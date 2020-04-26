@@ -48,6 +48,20 @@
         type="number"
       >
 
+      <div>
+        Luggage:
+        <select [ngModel]="detail?.baggage" name="baggage">
+          <!-- [selected]="item.key === detail?.baggage" >>> This line is equivalent to: [ngValue]="item.key" -->
+          <option
+            *ngFor="let item of baggage"
+            [selected]="item.key === detail?.baggage"
+            [value]="item.key"
+          >
+            {{ item.value }}
+          </option>
+        </select>
+      </div>
+
     </div>
 
   </div>

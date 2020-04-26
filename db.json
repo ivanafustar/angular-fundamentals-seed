@@ -2,7 +2,7 @@
   "passengers": [
     {
       "id": 1,
-      "fullName": "Nick Jackelsonlll",
+      "fullName": "Nick Jackelson",
       "checkedIn": true,
       "checkInDate": 1490742000000,
       "children": [
@@ -11,7 +11,7 @@
           "name": "Darren"
         }
       ],
-      "baggage": ""
+      "baggage": "none"
     },
     {
       "id": 2,
